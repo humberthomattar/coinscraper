@@ -6,7 +6,7 @@ api_version = "2"
 vm_name = "coinscraper"
 sync_dir = "/tmp/coinscraper/"
 ansible_dir = "/tmp/coinscraper/ansible/"
-is_proxy = false
+is_proxy = true
 
 Vagrant.configure(api_version) do |config|
   
@@ -22,7 +22,7 @@ Vagrant.configure(api_version) do |config|
   end
 
   # Mapeamento das portas guest e host
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 3001, host: 3001
 
   # Mapeamento de sincronismo host e guest  
   config.vm.synced_folder ".", sync_dir
