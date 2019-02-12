@@ -1,0 +1,6 @@
+---
+- name: PIP | Install Virtualenv
+  pip:
+    name: 
+      - virtualenv
+  

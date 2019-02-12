@@ -1,0 +1,15 @@
+---
+  - name: APP | Clone project
+    become: true
+    become_user: vagrant
+    git:
+      repo: https://github.com/humberthomattar/coinscraper.git
+      dest: /home/vagrant/coinscraper/app/
+      clone: yes
+      update: yes
+  
+  - name: Install requirements
+    pip: 
+      requirements: /home/vagrant/coinscraper/app/requirements.txt
+      virtualenv: /home/vagrant/coinscraper/
+      virtualenv_python: python3.5
