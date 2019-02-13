@@ -15,7 +15,7 @@ def get_currency(file_path):
     return  os.path.basename(os.path.splitext(file_path)[0])
 
 def file_to_dataframe(file):
-    return pd.read_csv(os.path.basename(file))
+    return pd.read_csv(file)
 
 def main():
     files = get_files(path_data_file, file_name_pattern)
