@@ -48,7 +48,7 @@ def download_data(currency, start_date, end_date):
         df['Date'] = pd.to_datetime(df['Date'], format='%b %d, %Y')
 
         # Save to CSV
-        df.to_csv('data/' + currency + '.csv', index=False)
+        df.to_csv('data_historical/' + currency + '.csv', index=False)
     except Exception as e:
         print("Error : Could not Download - " + currency)
         print(e)
