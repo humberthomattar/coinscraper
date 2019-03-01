@@ -10,7 +10,7 @@ is_proxy = true
 
 Vagrant.configure(api_version) do |config|
   
-  config.vm.box = "ubuntu/xenial64" # server v16.04.05
+  config.vm.box = "ubuntu/bionic64" # server v18.04
   config.vm.define vm_name
   config.vm.hostname = vm_name
   config.vm.box_check_update = false
@@ -37,6 +37,7 @@ Vagrant.configure(api_version) do |config|
  
   # configuracao para o provisionamento do conteudo da maquina
   config.vm.provision "ansible_local" do |ansible|
+    ansible.compatibility_mode = "2.0"
     ansible.playbook = "playbook.yml"
     ansible.provisioning_path = ansible_dir
   end
